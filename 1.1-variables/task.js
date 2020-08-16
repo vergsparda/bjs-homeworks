@@ -14,16 +14,19 @@ function averageMark(a, g, p) {
 	return averageRate;
 }
 
+
 function sayHello(userName) {
+	let myName = userName;
+	let message = `Привет, мир! Меня зовут ${myName}`;
 
-    // реализуйте здесь задание №2
-
-	return // ваш ответ;
+	return message;
 }
 
 function calculateFormula() {
+	let x = 2;
+	let y = 22;
+	let z = 0;
+	let result = x * y + 5 * z + x - 1;
 
-	// реализуйте здесь задание №3
-
-    return // ваш ответ;
+    return result;
 }
