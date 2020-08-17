@@ -15,8 +15,29 @@ function getResult(a,b,c){
 }
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    // return averageMark;
+  let sum = 0;
+  console.log(marks.length)
+
+  function getSumMarks() {
+    for (let i = 0; i < marks.length; i++) {
+      sum += marks[i];
+    }
+  }
+
+  if (marks.length === 0) {
+    averageMark = 0;
+  } else if (marks.length > 5) {
+    console.log('оценок больше пяти')
+    marks.splice(5, 999);
+    console.log(marks);
+    getSumMarks(marks.length);
+  } else if (marks.length <= 5) {
+    console.log(marks);
+    getSumMarks(marks.length);
+  }
+  let averageMark = sum / marks.length;
+
+  return averageMark;
 }
 
 function askDrink(name,dateOfBirthday){
