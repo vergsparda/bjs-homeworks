@@ -1,4 +1,4 @@
-'use strict'
+﻿'use strict'
 
 function getResult(a,b,c){
   let discriminant = Math.pow(b, 2) - (4 * a * c);
@@ -16,6 +16,7 @@ function getResult(a,b,c){
 
 function getAverageMark(marks){
   let sum = 0;
+  let averageMark;
   console.log(marks.length)
 
   function getSumMarks() {
@@ -24,7 +25,7 @@ function getAverageMark(marks){
     }
   }
 
-  if (marks.length === 0) {
+  if (marks.length === NaN) {
     averageMark = 0;
   } else if (marks.length > 5) {
     console.log('оценок больше пяти')
@@ -35,12 +36,23 @@ function getAverageMark(marks){
     console.log(marks);
     getSumMarks(marks.length);
   }
-  let averageMark = sum / marks.length;
+    averageMark = sum / marks.length;
 
   return averageMark;
 }
 
 function askDrink(name,dateOfBirthday){
-    // код для задачи №3 писать здесь
-    // return result;
+  let userName = name;
+  let userBirthYear = dateOfBirthday.getFullYear();
+  let now = new Date();
+  let currentYear = now.getFullYear();
+  let userAge = currentYear - userBirthYear;
+  let drink;
+  if (userAge >= 18) {
+    drink = `Не желаете ли олд-фэшн, ${userName}?`
+  } else if(userAge < 18) {
+    drink= `Сожалею, ${userName}, но я не могу вам продать алкоголь. 
+    Зато могу предложить вам замечательный клюквенный компот!`
+  }
+  return drink;
 }
