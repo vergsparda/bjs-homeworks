@@ -1,4 +1,4 @@
-'use strict'
+`use strict`
 
 // Задача №1
 
@@ -38,22 +38,12 @@ function showSolutionsMessage(a, b, c) {
 }
 // Задача №2
 
-const data = {
-  algebra: [4, 5, 5, 4],
-  geometry: [2, 5],
-  russian: [3, 3, 4, 5],
-  physics: [5, 5],
-  music: [2, 2, 5],
-  english: [4, 4, 3, 3],
-  poetry: [5, 3, 4],
-  chemistry: [2],
-  french: [4, 4]
-}
+const dataScore = {}
 
 function getAverageMark(marks) {
   let sum = 0
 
-  if (marks !== 0) {
+  if (marks != 0) {
     for (let i = 0; i < marks.length; i++) {
       sum += marks[i]
     }
@@ -65,12 +55,42 @@ function getAverageMark(marks) {
 }
 
 function getAverageScore(data) {
-  const dataScore = new Object()
+  let counter = 0
 
   for (let prop in data) {
     const value = getAverageMark(data[prop])
     dataScore[prop] = value
   }
-  console.log(dataScore)
-  return
+
+  let total = 0
+  for (let key in dataScore) {
+    let value = dataScore[key]
+    if (dataScore[key] === 0) {
+      this.average = 0
+      return dataScore
+    } else {
+      total += +dataScore[key]
+      counter++
+    }
+    dataScore.average = +total / +counter
+  }
+
+  return dataScore
+}
+
+// Задача №3
+
+function getDecodedValue(secret) {
+  if (secret === 0) {
+    return 'Родриго'
+  } else if (secret === 1) {
+    return 'Эмильо'
+  }
+}
+
+function getPersonData(secretData) {
+  return {
+    firstName: getDecodedValue(secretData.aaa),
+    lastName: getDecodedValue(secretData.bbb)
+  }
 }
