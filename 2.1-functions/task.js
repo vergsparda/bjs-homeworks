@@ -38,8 +38,6 @@ function showSolutionsMessage(a, b, c) {
 }
 // Задача №2
 
-const dataScore = {}
-
 function getAverageMark(marks) {
   let sum = 0
 
@@ -55,26 +53,34 @@ function getAverageMark(marks) {
 }
 
 function getAverageScore(data) {
+  const dataScore = {}
   let counter = 0
+  let total = 0
 
-  for (let prop in data) {
-    const value = getAverageMark(data[prop])
-    dataScore[prop] = value
+  function isEmpty(obj) {
+    for (let key in obj) {
+      return false
+    }
+    return true
   }
 
-  let total = 0
-  for (let key in dataScore) {
-    let value = dataScore[key]
-    if (dataScore[key] === 0) {
-      this.average = 0
-      return dataScore
-    } else {
-      total += +dataScore[key]
+  if (isEmpty(data) === true) {
+    dataScore.average = 0
+    return dataScore
+  } else {
+    for (let prop in data) {
+      const value = getAverageMark(data[prop])
+      dataScore[prop] = value
+    }
+
+    for (let key in dataScore) {
+      let value = dataScore[key]
+      total += dataScore[key]
       counter++
     }
-    dataScore.average = +total / +counter
   }
 
+  dataScore.average = total / counter
   return dataScore
 }
 
