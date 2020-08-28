@@ -87,11 +87,7 @@ function getAverageScore(data) {
 // Задача №3
 
 function getDecodedValue(secret) {
-  if (secret === 0) {
-    return 'Родриго'
-  } else if (secret === 1) {
-    return 'Эмильо'
-  }
+  return secret ? 'Эмильо' : 'Родриго'
 }
 
 function getPersonData(secretData) {
