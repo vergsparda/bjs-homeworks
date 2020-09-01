@@ -35,6 +35,6 @@ function getAverageMark(marks) {
 function checkBirthday(birthday) {
   const now = +(new Date())
   const manBirthday = +(new Date(birthday))
-  const age = ((now - manBirthday) / 31536000000).toFixed(0)
+  const age = ((now - manBirthday) / 31570560000).toFixed(0)
   return (age > 18) ? true : false
 }
