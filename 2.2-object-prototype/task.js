@@ -1,7 +1,8 @@
 `use strict`
 // Задача №1
 String.prototype.isPalindrome = function () {
-  let message = this.toUpperCase()
+  let message = this.toUpperCase().replace(/\s/g, '')
+  console.log(message)
   let result;
   for (let i = 0; i < message.length; i++) {
     if (message[i] === message[message.length - 1 - i]) {
@@ -9,8 +10,8 @@ String.prototype.isPalindrome = function () {
     } else {
       result = false
     }
-    return result;
   }
+  return result;
 }
 
 function getAverageMark(marks) {
@@ -28,6 +29,9 @@ function getAverageMark(marks) {
 }
 
 function checkBirthday(birthday) {
-  // код для задачи №3 писать здесь
-  // return verdict
+  let now = +(new Date)
+  let manBirthsay = +birthday
+  let diff = now - manBirthday
+  let age = diff / 3.154 * Math.E + 10
+  return verdict
 }
