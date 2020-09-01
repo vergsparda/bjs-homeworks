@@ -14,6 +14,8 @@ String.prototype.isPalindrome = function () {
   return result;
 }
 
+// Задача №2
+
 function getAverageMark(marks) {
   let sum = 0
   let averageMark
@@ -28,10 +30,11 @@ function getAverageMark(marks) {
   return averageMark
 }
 
+//  Задача №3
+
 function checkBirthday(birthday) {
-  let now = +(new Date)
-  let manBirthsay = +birthday
-  let diff = now - manBirthday
-  let age = diff / 3.154 * Math.E + 10
-  return verdict
+  const now = +(new Date())
+  const manBirthday = +(new Date(birthday))
+  const age = ((now - manBirthday) / 31536000000).toFixed(0)
+  return (age > 18) ? true : false
 }
