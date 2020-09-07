@@ -130,7 +130,7 @@ class StudentLog {
       for (let i = 0; i < this.grades[subject].length; i++) {
         sum += this.grades[subject][i];
       }
-      return (sum / this.grades[subject].length).tiFixed(1);
+      return (sum / this.grades[subject].length);
     }
   }
 
