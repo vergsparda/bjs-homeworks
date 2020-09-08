@@ -138,7 +138,9 @@ class StudentLog {
     let sum = 0;
     let count = 0;
      for ( let subject in this.grades) {
+       console.log(subject);
        for (let mark of this.grades[subject]) {
+         console.log(mark)
          sum += mark;
          count++;
        }
