@@ -71,15 +71,13 @@ function memorize(fn, limit) {
   let memory = [];
   return function (...args) {
     const oldResult = memory.find(item => compareArrays(args, item.args));
-    if (oldResult !== undefined) return oldResult.result;
+    if (oldResult) return oldResult.result;
     const newResult = fn(...args);
-    if (memory.length === limit) {
-      memory.shift();
-      memory.push({
-        args: args,
-        result: newResult
-      });
-    }
+    if (memory.length === limit) memory.shift();
+    memory.push({
+      args: args,
+      result: newResult
+    });
     return newResult;
   }
 }
