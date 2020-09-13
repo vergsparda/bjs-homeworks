@@ -19,24 +19,26 @@ function validateCount(number) {
 class Triangle {
   constructor(a, b, c) {
     if ((a + b < c || b + c < a) || c + a < b) throw new Error(`Треугольник с такими сторонами не существует`);
+    else this.sides = [a, b, c];
   }
 
   getPerimeter() {
-    return a + b + c;
+    return this.sides.reduce((a, b) => a + b);
   }
 
   getArea() {
-    const p = (a + b + c) / 2;
-    return (Math.sqrt(p * (p - a) * (p - b) * (p - c))).toFixed(3);
+    const p = this.getPerimeter() / 2;
+    return Number((Math.sqrt(p * (p - this.sides[0]) * (p - this.sides[1]) * (p - this.sides[2]))).toFixed(3));
   }
 }
 
 function getTriangle(a, b, c) {
   try {
-  return new Triangle(a, b, c)
-  } catch (e) {
-
+    return new Triangle(a, b, c)
+  } catch {
+    return {
+      getArea() {return 'Ошибка! Треугольник не существует'},
+      getPerimeter() {return 'Ошибка! Треугольник не существует'},
+    }
   }
 }
-
-const triangle = new Triangle(2,5,5);
