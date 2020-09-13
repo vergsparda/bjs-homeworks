@@ -5,11 +5,7 @@ String.prototype.isPalindrome = function () {
   console.log(message)
   let result;
   for (let i = 0; i < message.length; i++) {
-    if (message[i] === message[message.length - 1 - i]) {
-      result = true
-    } else {
-      result = false
-    }
+    (message[i] === message[message.length - 1 - i]) ? result = true : result = false
   }
   return result;
 }
@@ -36,5 +32,5 @@ function checkBirthday(birthday) {
   const now = +(new Date())
   const manBirthday = +(new Date(birthday))
   const age = ((now - manBirthday) / 31570560000).toFixed(0)
-  return (age > 18) ? true : false
+  return age > 18;
 }
