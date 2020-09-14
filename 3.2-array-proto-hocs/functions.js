@@ -82,8 +82,6 @@ function memorize(fn, limit) {
   }
 }
 
-const mSum = memorize(sum, 5); // 5 результатов может хранится в памяти
+const mSum = memorize(sum, 5);
 sum(3, 4); // 7
-// разница только в том, что mSum запоминает результат (7)
-// и повторно не делает вычисления
 mSum(3, 4); // 7

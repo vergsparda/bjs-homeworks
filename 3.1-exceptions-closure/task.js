@@ -3,8 +3,10 @@
 // Задача №1
 
 function parseCount(number) {
-  if (isNaN(Number.parseInt(number))) throw new Error(`Невалидное значение`);
-  else return Number.parseInt(number);
+  //добавлена переменная для одного действия парсинга.
+  let parsed = Number.parseInt(number);
+  if (isNaN(parsed)) throw new Error(`Невалидное значение`);
+  else return parsed;
 }
 
 function validateCount(number) {
@@ -37,8 +39,8 @@ function getTriangle(a, b, c) {
     return new Triangle(a, b, c)
   } catch {
     return {
-      getArea() {return 'Ошибка! Треугольник не существует'},
-      getPerimeter() {return 'Ошибка! Треугольник не существует'},
+      getArea: () => ('Ошибка! Треугольник не существует'),
+      getPerimeter: () => ('Ошибка! Треугольник не существует'),
     }
   }
 }
