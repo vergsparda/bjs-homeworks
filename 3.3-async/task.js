@@ -1,3 +1,5 @@
+'use strict'
+
 class AlarmClock {
   constructor() {
     this.alarmCollection = [];
@@ -5,14 +7,18 @@ class AlarmClock {
   }
 
   addClock(time, callback, id) {
-    if (id === undefined) {
-      throw new Error("Параметр id не задан");
+    if (!id) {
+      throw new Error('Параметр id не задан');
     }
     if (this.alarmCollection.find(item => item.id == id)) {
       console.error('Будильник с таким id уже существует')
       return false;
     }
-    this.alarmCollection.push({id, time, callback});
+    this.alarmCollection.push({
+      id,
+      time,
+      callback
+    });
   }
 
   removeClock(id) {
