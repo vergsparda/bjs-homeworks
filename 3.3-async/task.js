@@ -22,7 +22,7 @@ class AlarmClock {
   }
 
   removeClock(id) {
-    let index = this.alarmCollection.indexOf(this.alarmCollection.find(item => item[id] === id));
+    let index = this.alarmCollection.findIndex(item => item[id] === id);
     this.alarmCollection.splice(index, 1);
     return !this.alarmCollection.some(item => item[id] === id)
   }
